@@ -18,8 +18,8 @@ include $(INCLUDE_DIR)/package.mk
 include ../python3-package.mk
 
 define Package/sslstrip-hsts
-  SECTION:=custom
-  CATEGORY:=hack
+  SECTION:=net
+  CATEGORY:=Network
   SUBMENU:=Web Servers/Proxies
   URL:=https://github.com/byt3bl33d3r/sslstrip2
   TITLE:=sslstrip-hsts
