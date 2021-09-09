@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=sslsplit
+PKG_NAME:=sslsplit-openwrt
 PKG_VERSION:=0.5.5
 PKG_RELEASE:=3
 PKG_LICENSE:=BSD-2-Clause
@@ -22,7 +22,7 @@ PKG_MAINTAINER:=Andreas Nilsen <adde88@gmail.com>
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/sslsplit
+define Package/sslsplit-openwrt
   SECTION:=net
   CATEGORY:=Network
   DEPENDS:=+libevent2 +libopenssl +libevent2-openssl +libevent2-pthreads +libnet-1.2.x +libpcap +USE_MUSL:musl-fts
@@ -30,7 +30,7 @@ define Package/sslsplit
   URL:=https://www.roe.ch/SSLsplit
 endef
 
-define Package/sslsplit/description
+define Package/sslsplit-openwrt/description
   Transparent SSL/TLS interception
 endef
 
@@ -45,8 +45,8 @@ endef
 define Package/sslsplit/install
 	$(INSTALL_DIR)	$(1)/bin
 	$(INSTALL_DIR)	$(1)/etc/sslsplit
-	$(INSTALL_BIN)	$(PKG_INSTALL_DIR)/usr/local/bin/sslsplit			$(1)/bin/
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/usr/local/etc/sslsplit/sslsplit.conf.sample	$(1)/etc/sslsplit/
+	$(INSTALL_BIN)	$(PKG_INSTALL_DIR)/usr/local/bin/sslsplit-openwrt			$(1)/bin/
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/usr/local/etc/sslsplit-openwrt/sslsplit.conf.sample	$(1)/etc/sslsplit-openwrt/
 endef
 
-$(eval $(call BuildPackage,sslsplit))
+$(eval $(call BuildPackage,sslsplit-openwrt))
